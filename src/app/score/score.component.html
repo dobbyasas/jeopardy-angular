@@ -1,0 +1,14 @@
+<footer class="footer">
+    <div *ngFor="let player of players; let i = index" class="player">
+    <img [src]="player.imgPath" [alt]="player.name" />
+      <div class="info">
+        <h3>{{ player.name }}</h3>
+        <div>Score: {{ player.score }}</div>
+        <div class="button-container">
+          <button (click)="increaseScore(i)">+</button>
+          <button (click)="decreaseScore(i)">-</button>
+        </div>
+      </div>
+    </div>
+  </footer>
+  

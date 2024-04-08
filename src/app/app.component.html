@@ -1,3 +1,7 @@
 <div class="App">
   <app-question-card></app-question-card>
+  <app-score [players]="players" 
+             (handleIncreaseScore)="onIncreaseScore($event)" 
+             (handleDecreaseScore)="onDecreaseScore($event)">
+  </app-score>
 </div>
