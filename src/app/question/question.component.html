@@ -1,0 +1,9 @@
+<div class="question-container">
+    <h1>{{ question }}</h1>
+    <button *ngIf="!showAnswer" (click)="handleShowAnswer()">
+      Show Answer
+    </button>
+    <p *ngIf="showAnswer">{{ answer }}</p>
+    <button (click)="onBack.emit()">Back</button>
+  </div>
+  

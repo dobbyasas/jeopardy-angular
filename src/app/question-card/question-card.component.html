@@ -1,0 +1,19 @@
+<div class="playground">
+    <div *ngFor="let category of gameData; let categoryIndex = index" class="category">
+        <h2>{{category.category}}</h2>
+        <button *ngFor="let question of category.questions; let questionIndex = index"
+                class="question-button"
+                (click)="setCurrentQuestion(question, categoryIndex, questionIndex)"
+                [disabled]="question.answered">
+          {{question.value}}
+        </button>
+      </div>
+    <app-question *ngIf="currentQuestion" 
+                  [question]="currentQuestion.question"
+                  [value]="currentQuestion.value"
+                  [answer]="currentQuestion.answer"
+                  (onBack)="handleBack()"
+                  (onShowAnswer)="markQuestionAsAnswered(currentQuestion.categoryIndex, currentQuestion.questionIndex)">
+    </app-question>
+  </div>
+  
